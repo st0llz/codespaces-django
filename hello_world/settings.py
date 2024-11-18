@@ -64,7 +64,11 @@ ROOT_URLCONF = "hello_world.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR / "hello_world" / "templates"],
+        "DIRS": [
+            BASE_DIR / "hello_world" / "templates",
+            BASE_DIR / "appcadastro" / "templates",
+            ],
+
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -127,6 +131,7 @@ USE_TZ = True
 
 STATICFILES_DIRS = [
     BASE_DIR / "hello_world" / "static",
+    BASE_DIR / "appcadastro" / "static",
 ]
 
 STATIC_URL = "static/"
