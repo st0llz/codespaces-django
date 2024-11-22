@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de Pedidos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: beige;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .history-container {
+            width: 90%;
+            max-width: 800px;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            overflow: hidden;
+        }
+        .history-container h1 {
+            font-size: 26px;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .order-item {
+            background: #f8f8f8;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+        .order-item:hover {
+            transform: scale(1.02);
+        }
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .order-header h2 {
+            font-size: 18px;
+            color: #555;
+            margin: 0;
+        }
+        .order-header span {
+            font-size: 14px;
+            color: #888;
+        }
+        .order-body {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .order-body p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #666;
+        }
+        .order-body .status {
+            font-weight: bold;
+            color: #007BFF;
+        }
+        .order-body .status.entregue {
+            color: #28a745;
+        }
+        .order-body .status.pendente {
+            color: #ffc107;
+        }
+        .order-body .status.cancelado {
+            color: #dc3545;
+        }
+        .track-button {
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+        .track-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="history-container">
+        <h1>Histórico de Pedidos</h1>
+        
+
+        <div class="order-item">
+            <div class="order-header">
+                <h2>Pedido #123456</h2>
+                <span>Última atualização: 22/11/2024</span>
+            </div>
+            <div class="order-body">
+                <div>
+                    <p>Código de Rastreio: <strong>BR123456789XY</strong></p>
+                    <p>Status: <span class="status entregue">Entregue</span></p>
+                </div>
+                <a href="#" class="track-button">Ver Detalhes</a>
+            </div>
+        </div>
+
+        <!-- Pedido 2 -->
+        <div class="order-item">
+            <div class="order-header">
+                <h2>Pedido #789101</h2>
+                <span>Última atualização: 21/11/2024</span>
+            </div>
+            <div class="order-body">
+                <div>
+                    <p>Código de Rastreio: <strong>BR987654321XY</strong></p>
+                    <p>Status: <span class="status pendente">Pendente</span></p>
+                </div>
+                <a href="#" class="track-button">Ver Detalhes</a>
+            </div>
+        </div>
+
+
+        <div class="order-item">
+            <div class="order-header">
+                <h2>Pedido #654321</h2>
+                <span>Última atualização: 20/11/2024</span>
+            </div>
+            <div class="order-body">
+                <div>
+                    <p>Código de Rastreio: <strong>BR456123789XY</strong></p>
+                    <p>Status: <span class="status cancelado">Cancelado</span></p>
+                </div>
+                <a href="#" class="track-button">Ver Detalhes</a>
+            </div>
+        </div>
+
