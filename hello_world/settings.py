@@ -65,6 +65,7 @@ TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [
+            BASE_DIR / "templates",
             BASE_DIR / "hello_world" / "templates",
             BASE_DIR / "appcadastro" / "templates",
             ],
@@ -82,6 +83,16 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "hello_world.wsgi.application"
+
+
+# Configurações de autenticação e redirecionamento
+
+# FIXME: Ajustar as URLs de redirecionamento para páginas específicas após login e logout.
+# Atualmente, as duas redirecionam para a página inicial ('/'). Substituir pelos URLs certos depois.
+
+LOGIN_URL = '/login/'  # Página de login para rotas protegidas
+LOGIN_REDIRECT_URL = '/'  # Página para redirecionar após login
+LOGOUT_REDIRECT_URL = '/'  # Página para redirecionar após logout
 
 
 # Database
