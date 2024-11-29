@@ -11,30 +11,34 @@
     <meta name="author" content="GitHub Codespaces">
     <meta name="generator" content="GitHub Codespaces">
     <meta name="theme-color" content="#000000">
-    <title>{% block title %}{{ title }} | GitHub Codespaces ♥️ Django{% endblock %}</title>
-    
+    <!-- FIXME: Testar se o titulo esta puxando a variavel ou substituir por estatico -->
+    <title>{% block title %}{{ title }}{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'styleLogin.css' %}">
 </head>
 
 <body>
   
-  <div class="logincss"><form action="action_page.php" method="post">
+  <div class="logincss">
+    <form method="post">
+      {% csrf_token %}
 
-   
-    label for="uname"><b>Nome de usuário</b></label>
-    <input type="text" placeholder="Insira nome de usuário" name="uname" required>
+      <!-- uname e psw foi mudado para serem reconhecidos pelo djanco auth, modificar se configurado em algum outro lugar -->
+      <label for="username"><b>Nome de usuário</b></label>
+      <input type="text" placeholder="Insira nome de usuário" name="username" required>
 
-    <label for="psw"><b>Senha</b></label>
-    <input type="password" placeholder="Insira sua senha" name="psw" required>
+      <label for="password"><b>Senha</b></label>
+      <input type="password" placeholder="Insira sua senha" name="password" required>
 
-    <button type="submit">Login</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Lembrar de mim
-    </label>
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Lembrar de mim
+      </label>
 
-    <span class="psw"> <a href="#">Esqueceu a senha?</a></span>
-    <span class="psw">Não possui login? <a href="#">Cadastre-se</a></span>
-</form>
+      <!-- Links -->
+      <span class="psw"><a href="{% url 'password_reset' %}">Esqueceu a senha?</a></span>
+      <span class="psw">Não possui login? <a href="{% url 'register' %}">Cadastre-se</a></span>
+    </form>
+  </div>
 </body>
 
 </html>
