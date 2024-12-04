@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django_browser_reload",
+    "appcadastro",
 ]
 
 MIDDLEWARE = [
@@ -64,7 +65,12 @@ ROOT_URLCONF = "hello_world.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR / "hello_world" / "templates"],
+        "DIRS": [
+            BASE_DIR / "templates",
+            BASE_DIR / "hello_world" / "templates",
+            BASE_DIR / "appcadastro" / "templates",
+            ],
+
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -78,6 +84,16 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "hello_world.wsgi.application"
+
+
+# Configurações de autenticação e redirecionamento
+
+# FIXME: Ajustar as URLs de redirecionamento para páginas específicas após login e logout.
+# Atualmente, as duas redirecionam para a página inicial ('/'). Substituir pelos URLs certos depois.
+
+LOGIN_URL = '/login/'  # Página de login para rotas protegidas
+LOGIN_REDIRECT_URL = '/'  # Página para redirecionar após login
+LOGOUT_REDIRECT_URL = '/'  # Página para redirecionar após logout
 
 
 # Database
@@ -127,6 +143,7 @@ USE_TZ = True
 
 STATICFILES_DIRS = [
     BASE_DIR / "hello_world" / "static",
+    BASE_DIR / "appcadastro" / "static",
 ]
 
 STATIC_URL = "static/"

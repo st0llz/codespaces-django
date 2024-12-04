@@ -1,0 +1,44 @@
+{% load django_browser_reload %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="GitHub Codespaces ♥️ Django">
+    <meta name="author" content="GitHub Codespaces">
+    <meta name="generator" content="GitHub Codespaces">
+    <meta name="theme-color" content="#000000">
+    <!-- FIXME: Testar se o titulo esta puxando a variavel ou substituir por estatico -->
+    <title>{% block title %}{{ title }}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'styleLogin.css' %}">
+</head>
+
+<body>
+  
+  <div class="logincss">
+    <form method="post">
+      {% csrf_token %}
+
+      <!-- uname e psw foi mudado para serem reconhecidos pelo djanco auth, modificar se configurado em algum outro lugar -->
+      <label for="username"><b>Nome de usuário</b></label>
+      <input type="text" placeholder="Insira nome de usuário" name="username" required>
+
+      <label for="password"><b>Senha</b></label>
+      <input type="password" placeholder="Insira sua senha" name="password" required>
+
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Lembrar de mim
+      </label>
+
+      <!-- Links -->
+      <span class="psw"><a href="{% url 'password_reset' %}">Esqueceu a senha?</a></span>
+      <span class="psw">Não possui login? <a href="{% url 'register' %}">Cadastre-se</a></span>
+    </form>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,159 @@
+{% load static %}
+{% load django_browser_reload %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registro de Produtos Recebidos</title>
+<link rel="stylesheet" href="{% static %}">
+</head>
+<body>
+
+<style>
+    html {
+      text-align: center;
+      height: 100%;
+      width: 100%;
+      background-color: beige;
+
+    }
+    
+    body {
+        font-family: Arial, sans-serif;
+        background-color: beige;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 0;
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+    }
+
+    .form-section {
+        margin-bottom: 20px;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: whitesmoke;
+    }
+
+    .form-section label {
+        font-weight: bold;
+        display: block;
+        margin-top: 10px;
+    }
+
+    form{
+      display: grid;
+      grid-template-columns: 1 fr;
+      gap: 10px;
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 16px;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="password"],
+    input[type="time"]{
+      height: 34px;
+    }
+
+    .form-section button {
+        padding: 8px 15px;
+        margin: 10px 0;
+        background-color: green;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 1rem;
+    }
+
+    .form-section buttonRemove{
+        padding: 8px 15px;
+        margin: 10px 0;
+        background-color: darkred;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 1rem;
+    }
+    .excel-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    .excel-table th,
+    .excel-table td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+        font-size: 0.9rem;
+    }
+
+    .excel-table th {
+        background-color: white;
+        font-weight: bold;
+    }
+</style>
+    
+
+    <h1>Registro de Produtos Recebidos</h1>
+
+    <div class="form-section">
+        <h2>Adicionar Novo Produto</h2>
+        <form id="produtoForm">
+            <label for="nomeProduto">Nome do Produto:</label>
+            <input type="text" id="nomeProduto" name="nomeProduto" required>
+
+            <label for="numeroEncomenda">Número da Encomenda:</label>
+            <input type="text" id="numeroEncomenda" name="numeroEncomenda" required>
+
+            <label for="dataHoraRecebimento">Data e Hora do Recebimento:</label>
+            <input type="date" id="dataRecebimento" name="dataRecebimento" required>
+            <input type="time" id="horaRecebimento" name="horaRecebimento" required>
+
+            <label for="observacoes">Observações:</label>
+            <input type="text" id="observacoes" name="observacoes">
+
+            <label for="dataHoraRetirada">Data e Hora da Retirada:</label>
+            <input type="date" id="dataRetirada" name="dataRetirada">
+            <input type="time" id="horaRetirada" name="horaRetirada">
+
+            <button type="button" onclick="adicionarProduto()">Adicionar Produto</button>
+            <buttonRemove type="button" onclick="removerProduto()">Remover Produto</buttonRemove>"
+        </form>
+
+    <table class="excel-table">
+        <thead>
+            <tr>
+                <th>Número da Encomenda</th>
+                <th>Data e Hora do Recebimento</th>
+                <th>Observações</th>
+                <th>Data e Hora da Retirada</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody id="produtoTableBody">
+
+        </tbody>
+        
+    </table>
+      
+<script src="script.js"></script>
+
+</body>
+</html>
