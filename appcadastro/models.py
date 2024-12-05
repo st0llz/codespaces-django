@@ -49,3 +49,4 @@ class Usuario(models.Model):
         verbose_name = "Usuário"
         verbose_name_plural = "Usuários"
         ordering = ['nome']
+        
