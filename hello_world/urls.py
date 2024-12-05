@@ -31,6 +31,8 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('cadastro/', cadastro_views.cadastrar_usuario, name='register'),
     path('password_reset/', auth_views.PasswordResetView.as_view(), name='password_reset'),
+    path('historico/', cadastro_views.historico_usuario, name='historico_usuario'),
+    path("tabelaAdm/", cadastro_views.tabelaAdm_view, name='tabelaAdm')
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
