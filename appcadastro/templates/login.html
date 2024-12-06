@@ -12,8 +12,59 @@
     <meta name="generator" content="GitHub Codespaces">
     <meta name="theme-color" content="#000000">
     <!-- FIXME: Testar se o titulo esta puxando a variavel ou substituir por estatico -->
-    <title>{% block title %}{{ title }}{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'styleLogin.css' %}">
+    <style>
+      input[type=text], input[type=password] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+      }
+      
+      button {
+        background-color: #0488a9;
+        color: #000000;
+        padding: 16px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+      }
+      
+      span.psw {
+        float: right;
+        padding-top: 16px;
+      }
+      
+      span.psw {
+        display: block;
+        float: none;
+      }
+      
+      
+      html {
+        text-align: center;
+        height: 100%;
+        width: 100%;
+        background-color: beige;
+      
+      }
+      label {
+          font-weight: bold;
+      }
+      
+      form{
+        display: grid;
+        grid-template-columns: 1 fr;
+        gap: 10px;
+        max-width: 600px;
+        margin: 0 auto;
+        font-size: 16px;
+      }
+      
+    </style>
 </head>
 
 <body>
