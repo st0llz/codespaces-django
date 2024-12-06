@@ -109,16 +109,14 @@
         font-weight: bold;
     }
 </style>
-    
 
+    <!-- FIXME: Mudar template para preencher a tabela dinamicamente com os pedidos -->
     <h1>Registro de Produtos Recebidos</h1>
 
     <div class="form-section">
         <h2>Adicionar Novo Produto</h2>
         <form id="produtoForm">
-            <label for="nomeProduto">Nome do Produto:</label>
-            <input type="text" id="nomeProduto" name="nomeProduto" required>
-
+            
             <label for="numeroEncomenda">Número da Encomenda:</label>
             <input type="text" id="numeroEncomenda" name="numeroEncomenda" required>
 
@@ -129,12 +127,7 @@
             <label for="observacoes">Observações:</label>
             <input type="text" id="observacoes" name="observacoes">
 
-            <label for="dataHoraRetirada">Data e Hora da Retirada:</label>
-            <input type="date" id="dataRetirada" name="dataRetirada">
-            <input type="time" id="horaRetirada" name="horaRetirada">
-
             <button type="button" onclick="adicionarProduto()">Adicionar Produto</button>
-            <buttonRemove type="button" onclick="removerProduto()">Remover Produto</buttonRemove>"
         </form>
 
     <table class="excel-table">
@@ -143,8 +136,7 @@
                 <th>Número da Encomenda</th>
                 <th>Data e Hora do Recebimento</th>
                 <th>Observações</th>
-                <th>Data e Hora da Retirada</th>
-                <th>Ação</th>
+                <th>Retirado </th>
             </tr>
         </thead>
         <tbody id="produtoTableBody">
