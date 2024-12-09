@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Correios - Página Principal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: beige;
+            color: #333;
+        }
+
+        header {
+            background-color: #0073e6;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            border-color: #0073e6;
+        }
+
+        .card img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            margin: 10px 0;
+            font-size: 18px;
+            color: #0073e6;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #ddd;
+            color: #333;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Correios Parque da Cidade</h1>
+    </header>
+
+    <div class="container">
+        <h2>Acesso Rápido</h2>
+        <div class="grid">
+            <div class="card" onclick="window.location.href='perfil.html'">
+                <img src="perfil1.png" alt="Ícone Perfil">
+                <h3>Perfil</h3>
+                <p>Visualize e gerencie seus dados de usuário.</p>
+            </div>
+            <div class="card" onclick="window.location.href='produtos.html'">
+                <img src="correio.jpg" alt="Ícone Produtos">
+                <h3>Meus Produtos</h3>
+                <p>Acompanhe os produtos entregues ou a caminho.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Correios Parque da Cidade. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
