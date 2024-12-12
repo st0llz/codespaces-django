@@ -1,55 +1,111 @@
-{% load django_browser_reload %}
-{% load static %}
-
-<!doctype html>
-<html lang="en">
-
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="GitHub Codespaces ♥️ Django">
-    <meta name="author" content="GitHub Codespaces">
-    <meta name="generator" content="GitHub Codespaces">
-    <meta name="theme-color" content="#000000">
-    <title>{% block title %}{{ title }} | GitHub Codespaces ♥️ Django{% endblock %}</title>
-    
-    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Correios - Página Principal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: beige;
+            color: #333;
+        }
+
+        header {
+            background-color: #0073e6;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            border-color: #0073e6;
+        }
+
+        .card img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            margin: 10px 0;
+            font-size: 18px;
+            color: #0073e6;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #ddd;
+            color: #333;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+    </style>
 </head>
-
-
 <body>
-    <h1>Faça aqui seu cadastro</h1>
-    <form action="/cadastrar_usuario" method="post">
-      <label for="nome"<b>Nome</b></label>
-        <input type="text" placeholder="Insira seu nome" name="nome" id="nome" required>
+    <header>
+        <h1>Correios Parque da Cidade</h1>
+    </header>
 
-      <label for="CPF" <b>CPF</b></label>
-      <input type="text" placeholder="Insira seu CPF" name="cpf" id="cpf" required>  
+    <div class="container">
+        <h2>Acesso Rápido</h2>
+        <div class="grid">
+            <div class="card" onclick="window.location.href='perfil.html'">
+                <img src="perfil1.png" alt="Ícone Perfil">
+                <h3>Perfil</h3>
+                <p>Visualize e gerencie seus dados de usuário.</p>
+            </div>
+            <div class="card" onclick="window.location.href='produtos.html'">
+                <img src="correio.jpg" alt="Ícone Produtos">
+                <h3>Meus Produtos</h3>
+                <p>Acompanhe os produtos entregues ou a caminho.</p>
+            </div>
+        </div>
+    </div>
 
-      <br/><label for="DataNascimento" <b>Data de Nascimento</b></label>
-        <input id="date" type="date" />
-
-      <br /><label for="email"><b>Email</b></label>
-        <input type="text" placeholder="Insira seu Email" name="email" id="email" required>
-
-      <label> <b>Telefone</b> </label>
-        <input type="text" placeholder="Insira seu número com ddd" name="telefone" id="telefone" required>
-
-      <br/> <label for="senha"><b>Senha</b></label>
-        <input type="password" placeholder="Insira sua senha 8 a 15 caracteres" name="senha" id="senha" required>
-
-      <br/> <label for="senha2"<b>Repita sua senha</b></label>
-        <input type="password" placeholder="Repita sua senha" name="senha2" id="senha2" required>
-        
-      <br/>
-       <p>
-         <input type="checkbox" required>
-         Li e concordo com os <a href="#">Termos e condições</a>.
-       </p>
-      <button type="cadastro" class="botaocadastro">criar seu cadastro</button>
-      <br />
-      
-    </form>
-  </body>
-
+    <footer>
+        <p>&copy; 2024 Correios Parque da Cidade. Todos os direitos reservados.</p>
+    </footer>
+</body>
 </html>
